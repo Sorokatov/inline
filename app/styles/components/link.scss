@@ -1,0 +1,14 @@
+.link {
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    @include roboto-thin;
+    color: $link-text;
+    transition: $transition-time font-weight letter-spacing;
+
+    &:hover {
+        font-weight: 500;
+        text-decoration: underline;
+        letter-spacing: -.3px;
+    }
+}

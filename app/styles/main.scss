@@ -1,12 +1,15 @@
 // Settings imports
 
-@import "colors.scss";
+@import "_vars.scss";
 @import "default.scss";
 @import "fonts.scss";
 @import "mixins.scss";
-@import "vars.scss";
 
+// Components imports
 
-// Core components imports
-
-@import "core/header.scss";
+@import "components/button";
+@import "components/categories";
+@import "components/category-nav";
+@import "components/header";
+@import "components/link";
+@import "components/slider";

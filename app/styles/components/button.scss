@@ -1,0 +1,17 @@
+.button {
+    padding: 12px 27px;
+    border-radius: $border-radius;
+    box-shadow: 0 0 11.18px 1.82px rgba(0, 0, 0, 0.11);
+    @include roboto-bold;
+    font-size: 15px;
+    line-height: 1;
+    text-transform: uppercase;
+    background: $white;
+    color: $button-text;
+    cursor: pointer;
+    transition: $transition-time all;
+
+    &:hover {
+        box-shadow: 0 0 11.18px 3.82px rgba(0,0,0,0.11);
+    }
+}

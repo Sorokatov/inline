@@ -1,0 +1,37 @@
+.header {
+    padding: 16px 0 12px;
+    background-color: $white;
+    box-shadow: 0 4px 7.2px 0.8px rgba(0, 0, 0, 0.04);
+
+    &__container {
+        @include row(space-between);
+    }
+
+    &__logo {
+        display: inline-block;
+        width: 134px;
+        height: 44px;
+        @include bg-image('logo.png');
+    }
+
+    &__contacts {
+        @include row(center);
+    }
+
+    &__phones {
+        @include column;
+        position: relative;
+        margin-right: 45px;
+        padding-left: 50px;
+        
+        &:before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 0;
+            @include bg-image('phone.png');
+            width: 32px;
+            height: 32px;
+        }
+    }
+}

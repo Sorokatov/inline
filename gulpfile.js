@@ -25,7 +25,7 @@ const gulp = require('gulp'),
             styles: 'dist/css',
             templates: 'dist',
             scripts: 'dist/js',
-            images: 'dist/img',
+            images: 'dist/images',
             fonts: 'dist/fonts'
         }
     };
