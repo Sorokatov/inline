@@ -8,7 +8,7 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     path = {
         sources: {
-            styles: 'app/styles/**/*.scss',
+            styles: 'app/styles/main.scss',
             templates: 'app/*.html',
             scripts: 'app/js/**/*.js',
             images: 'app/images/**/*',

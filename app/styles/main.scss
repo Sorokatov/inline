@@ -1,3 +1,12 @@
-body {
-  color: blue;
-}
+// Settings imports
+
+@import "colors.scss";
+@import "default.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+@import "vars.scss";
+
+
+// Core components imports
+
+@import "core/header.scss";
