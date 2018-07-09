@@ -15,7 +15,7 @@
     }
 
     &__contacts {
-        @include row(center);
+        @include row(flex-start, center);
     }
 
     &__phones {
