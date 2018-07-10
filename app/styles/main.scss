@@ -1,15 +1,21 @@
 // Settings imports
 
-@import "_mixins.scss";
-@import "_vars.scss";
-@import "default.scss";
-@import "fonts.scss";
+@import "_mixins";
+@import "_vars";
+@import "default";
+@import "fonts";
+
+// Shared imports
+
+@import "shared/button";
+@import "shared/form";
+@import "shared/header";
+@import "shared/link";
+@import "shared/nav";
 
 // Components imports
 
-@import "components/button";
+@import "components/catalogue";
 @import "components/categories";
 @import "components/category-nav";
-@import "components/header";
-@import "components/link";
 @import "components/slider";

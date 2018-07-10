@@ -7,12 +7,16 @@
         SELECTORS: {
             categoryNavItem: '.js-category-nav-item',
             categoryNavMenu: '.js-category-nav-menu',
-            categoryNavArrow: '.js-category-nav-arrow'
+            categoryNavArrow: '.js-category-nav-arrow',
+            catalogueMenuItem: '.js-catalogue-menu-item',
+            catalogueMenuToggler: '.js-catalogue-menu-toggler',
+            catalogueSubMenu: '.js-catalogue-submenu'
         },
 
         CLASSES: {
             active: '_active',
-            hidden: '_hidden'
+            hidden: '_hidden',
+            open: '_open'
         },
 
         init: function () {
@@ -20,10 +24,11 @@
         },
 
         initEventListeners: function () {
-            $(document).on('click', this.SELECTORS.categoryNavItem, this.categoryNavToggle.bind(this));
+            $(document).on('click', this.SELECTORS.categoryNavItem, this.toggleCategoryNav.bind(this));
+            $(document).on('click', this.SELECTORS.catalogueMenuToggler, this.toggleCatalogueSubmenu.bind(this));
         },
 
-        categoryNavToggle: function (event) {
+        toggleCategoryNav: function (event) {
             var $self = $(event.currentTarget),
                 $navMenu = $(this.SELECTORS.categoryNavMenu);
 
@@ -42,6 +47,14 @@
         moveCategoryNavArrow: function (elementForAlign) {
             var offsetFromElem = 30; // for visual goodness
             $(this.SELECTORS.categoryNavArrow).css('left', elementForAlign.get(0).offsetLeft - offsetFromElem);
+        },
+
+        toggleCatalogueSubmenu: function (event) {
+            var $self = $(event.currentTarget);
+
+            $self.closest(this.SELECTORS.catalogueMenuItem)
+                .find(this.SELECTORS.catalogueSubMenu)
+                .slideToggle();
         }
     };
 

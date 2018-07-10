@@ -23,6 +23,7 @@
             text-transform: uppercase;
             font-size: 30px;
             letter-spacing: 1px;
+            color: $title-text;
 
             &-bold {
                 display: inline-block;
@@ -122,6 +123,110 @@
             padding-bottom: 0;
             border-radius: 0;
             @include bg-image('sliding.jpg');
+            background-position-x: center;
+        }
+    }
+
+    &__additional {
+        width: 100%;
+        padding: 60px 0 30px;
+        background-color: $background;
+
+        &-logo {
+
+            &-wrap {
+                width: 100%;
+                text-align: center;
+            }
+
+            display: inline-block;
+            width: 134px;
+            height: 44px;
+            @include bg-image('logo.png');
+            background-size: cover;
+        }
+    }
+
+    &__makeown {
+        @include row(flex-end);
+        height: 412px;
+        margin-bottom: 60px;
+        border-radius: $border-radius;
+        @include bg-image('makeown.jpg');
+        background-repeat: no-repeat;
+        background-color: $background-darker;
+
+        &-wrap {
+            @include column(center);
+            width: 285px;
+            margin-top: 103px;
+            margin-right: 95px;
+        }
+
+        &-title {
+            margin-bottom: 25px;
+            font-size: 30px;
+            letter-spacing: .3px;
+            color: $title-text;
+        }
+
+        &-subtitle {
+            margin-bottom: 70px;
+            @include roboto-thin;
+            text-align: center;
+            font-size: 18px;
+        }
+    }
+
+    &__contact {
+        margin-bottom: 100px;
+        padding: 90px 175px 100px;
+        border-radius: $border-radius;
+        box-shadow: 0 0 5px 0 rgba(107, 107, 107, 0.1);
+        background-color: $white;
+        @include bg-image("form-bg.png");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &-head {
+            @include row(space-between, flex-start);
+            margin-bottom: 70px;
+        }
+
+        &-title {
+            position: relative;
+            padding-left: 60px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 52px;
+                @include bg-image("support.png");
+            }
+
+            &-text {
+                margin-bottom: 6px;
+                @include roboto-bold;
+                font-size: 26px;
+                text-transform: uppercase;
+                color: $secondary-text;
+            }
+
+            &-subtext {
+                font-size: 15px;
+                color: $gray-7f;
+            }
+        }
+
+        &-logo {
+            width: 102px;
+            height: 33px;
+            @include bg-image('logo.png');
+            background-size: cover;
         }
     }
 }

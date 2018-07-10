@@ -4,7 +4,6 @@
     letter-spacing: 0;
     @include roboto-thin;
     color: $link-text;
-    transition: $transition-time font-weight letter-spacing;
 
     &:hover {
         font-weight: 500;

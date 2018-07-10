@@ -1,0 +1,66 @@
+.form {
+    @include column(center);
+
+    &__container {
+        width: 100%;
+        @include row(space-between);
+        margin-bottom: 50px;
+
+        &._vertical {
+            @include column(flex-start, flex-start);
+        }
+    }
+
+    &__column {
+        @include column(flex-start);
+        width: 360px;
+    }
+
+    &__item {
+        @include column(flex-start);
+        width: 100%;
+
+        & + & {
+            margin-top: 30px;
+        }
+    }
+
+    &__label {
+        @include roboto-bold();
+        margin-bottom: 22px;
+        font-size: 15px;
+        color: $secondary-text;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0 20px 11px;
+        border: 0;
+        border-bottom: 1px solid $gray-cc;
+
+        &::placeholder {
+            color: $label-text;
+            opacity: 1;
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 130px;
+        padding: 13px 18px;
+        border: 1px solid $gray-d7;
+        resize: none;
+    }
+
+    &__input,
+    &__textarea {
+        color: $basic-text;
+        @include roboto-light-italic;
+        font-size: 15px;
+        transition: $transition-time all;
+
+        &:focus {
+            border-color: $blue-2d;
+        }
+    }
+}

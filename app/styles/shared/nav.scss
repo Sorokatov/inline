@@ -1,0 +1,28 @@
+.nav {
+    padding-top: 17px;
+
+    &__container {
+        @include row();
+    }
+
+    &__link {
+        @include roboto-light;
+        font-size: 15px;
+        color: $basic-text;
+
+        & + & {
+            margin-left: 50px;
+        }
+
+        &:hover,
+        &._active {
+            color: $blue-2d;
+        }
+
+
+        &._active {
+            @include roboto-bold;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,12 +1,14 @@
 .button {
     display: inline-block;
     min-width: 185px;
-    padding: 12.5px 27px;
+    padding: 11.5px 27px;
     border-radius: $border-radius;
+    border: 1px solid transparent;
     box-shadow: 0 0 11.18px 1.82px rgba(0, 0, 0, 0.11);
     @include roboto-bold;
     font-size: 15px;
     line-height: 1;
+    letter-spacing: .3px;
     text-transform: uppercase;
     background: $white;
     color: $button-text;
@@ -19,7 +21,6 @@
     }
 
     &._transparent {
-        padding: 11.5px 27px;
         border: 1px solid $link-text;
         background: transparent;
         box-shadow: none;
@@ -27,6 +28,30 @@
         &:hover {
             background-color: $link-text;
             color: $white;
+        }
+    }
+
+    &._black {
+        background: $secondary-text;
+        box-shadow: 0 0 11.18px 1.82px rgba(0, 0, 0, 0.11);
+        color: $white;
+
+        &:hover {
+            background-color: transparent;
+            border-color: $secondary-text;
+            color: $secondary-text;
+        }
+    }
+
+    &._blue {
+        background-color: $blue-2d;
+        border-color: $blue-2d;
+        color: $white;
+        font-weight: 500;
+
+        &:hover {
+            background-color: $white;
+            color: $blue-2d;
         }
     }
 }
