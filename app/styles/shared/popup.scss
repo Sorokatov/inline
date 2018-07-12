@@ -1,0 +1,212 @@
+.popup {
+    width: 465px;
+    margin: 0 auto;
+    padding: 20px 30px 80px 30px;
+    border-radius: $border-radius;
+    background-color: $white;
+
+    &._card {
+        width: 950px;
+        padding: 25px 40px 35px 40px;
+    }
+
+    &__head {
+        @include row(space-between);
+        margin-bottom: 20px;
+    }
+
+    &__logo {
+        width: 80px;
+        height: 28px;
+
+        &-img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__card {
+        @include row();
+
+        &-images {
+            @include column();
+            width: 380px;
+
+            &-row {
+                @include row();
+                width: 100%;
+                height: 110px;
+            }
+        }
+
+        &-image {
+            height: 100%;
+            width: 110px;
+            border: 2px solid $gray-f5;
+            overflow: hidden;
+            cursor: pointer;
+
+            img {
+                transition: $transition-time transform;
+                transform: scale(1);
+                backface-visibility: hidden;
+            }
+
+            & + & {
+                margin-left: 25px;
+            }
+        }
+
+        &-showcase {
+            @include row(center, center);
+            width: 100%;
+            max-width: 100%;
+            height: 320px;
+            max-height: 320px;
+            margin-bottom: 30px;
+        }
+
+        &-showcase,
+        &-image {
+
+            img {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        &-image:hover {
+
+            img {
+                transform: scale(1.075);
+            }
+        }
+
+        &-data {
+            margin-left: 30px;
+            border-left: 1px solid $gray-e2;
+            padding-left: 30px;
+
+            &-title {
+                margin-bottom: 6px;
+                @include roboto-bold;
+                font-size: 21px;
+            }
+
+            &-model {
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+
+            &-title,
+            &-model {
+                text-transform: uppercase;
+            }
+
+            &-desc {
+                margin-bottom: 27px;
+                font-size: 15px;
+                line-height: 22px;
+            }
+        }
+
+        &-list {
+            margin-bottom: 40px;
+
+            &-item {
+                @include row();
+                position: relative;
+                padding-left: 30px;
+                font-size: 17px;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    width: 13px;
+                    height: 13px;
+                    @include bg-image("active-menu.png");
+                    background-size: cover;
+                }
+
+                & + & {
+                    margin-top: 17px;
+                }
+            }
+
+            &-title {
+                font-weight: 700;
+
+                &._colors {
+                    min-width: 145px;
+                }
+            }
+
+            &-value {
+                display: inline-block;
+                margin-left: 5px;
+            }
+
+            &-colors {
+                position: relative;
+                top: -7px;
+                @include row();
+                flex-wrap: wrap;
+                margin-left: 16px;
+            }
+
+            &-color {
+                position: relative;
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                margin-bottom: 10px;
+                margin-right: 15px;
+                border: 1px solid transparent;
+                cursor: pointer;
+
+                &._active {
+                    pointer-events: none;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: -7px;
+                        left: -7px;
+                        width: 36px;
+                        height: 36px;
+                        border: 1px solid #c8c8c8;
+                    }
+                }
+
+                &._black {
+                    background-color: #000000;
+                }
+
+                &._brown {
+                    background-color: #382001;
+                }
+
+                &._gold {
+                    background-color: #836600;
+                }
+
+                &._wooden {
+                    background-color: #be8100;
+                }
+
+                &._white {
+                    background-color: $white;
+                    border-color: $basic-text;
+                }
+            }
+        }
+
+        &-actions {
+            @include row(space-between);
+        }
+    }
+}

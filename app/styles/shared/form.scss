@@ -20,9 +20,17 @@
         @include column(flex-start);
         width: 100%;
 
+        &._centered {
+            align-items: center;
+        }
+
         & + & {
             margin-top: 30px;
         }
+    }
+
+    &__item._centered &__input {
+        text-align: center;
     }
 
     &__label {

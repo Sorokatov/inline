@@ -5,6 +5,10 @@
 @import "default";
 @import "fonts";
 
+// Libs imports
+
+@import "partials/magnific-popup";
+
 // Shared imports
 
 @import "shared/button";
@@ -12,6 +16,7 @@
 @import "shared/header";
 @import "shared/link";
 @import "shared/nav";
+@import "shared/popup";
 
 // Components imports
 

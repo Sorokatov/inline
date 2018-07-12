@@ -10,7 +10,11 @@
             categoryNavArrow: '.js-category-nav-arrow',
             catalogueMenuItem: '.js-catalogue-menu-item',
             catalogueMenuToggler: '.js-catalogue-menu-toggler',
-            catalogueSubMenu: '.js-catalogue-submenu'
+            catalogueSubMenu: '.js-catalogue-submenu',
+            itemPopupShowButton: '.js-show-item-popup',
+            itemPopup: '.js-item-popup',
+            contactPopupShowButton: '.js-show-contact-popup',
+            contactPopup: '.js-contact-popup'
         },
 
         CLASSES: {
@@ -21,11 +25,29 @@
 
         init: function () {
             this.initEventListeners();
+            this.initPopups()
         },
 
         initEventListeners: function () {
             $(document).on('click', this.SELECTORS.categoryNavItem, this.toggleCategoryNav.bind(this));
             $(document).on('click', this.SELECTORS.catalogueMenuToggler, this.toggleCatalogueSubmenu.bind(this));
+        },
+
+        initPopups: function () {
+
+            $(this.SELECTORS.itemPopupShowButton).magnificPopup({
+                items: {
+                    src: this.SELECTORS.itemPopup,
+                    type: 'inline'
+                }
+            });
+
+            $(this.SELECTORS.contactPopupShowButton).magnificPopup({
+                items: {
+                    src: this.SELECTORS.contactPopup,
+                    type: 'inline'
+                }
+            })
         },
 
         toggleCategoryNav: function (event) {

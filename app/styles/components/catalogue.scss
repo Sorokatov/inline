@@ -149,6 +149,7 @@
     &__items {
         @include row();
         flex-wrap: wrap;
+        margin-bottom: 45px;
     }
 
     &__item {
@@ -203,5 +204,9 @@
                 filter: blur(10px);
             }
         }
+    }
+
+    &__actions {
+        @include row(center);
     }
 }

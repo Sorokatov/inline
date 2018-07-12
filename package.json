@@ -9,7 +9,8 @@
   "author": "Maksym Sorokatov",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "magnific-popup": "^1.1.0"
   },
   "devDependencies": {
     "browser-sync": "^2.24.5",
