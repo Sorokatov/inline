@@ -19,19 +19,19 @@
             background-size: cover;
 
             &._c1 {
-                @include bg-image('category-nav/category-2.png');
+                @include bg-image('/category-2.png');
             }
 
             &._c2 {
-                @include bg-image('category-nav/category-2.png');
+                @include bg-image('/category-2.png');
             }
 
             &._c3 {
-                @include bg-image('category-nav/category-3.png');
+                @include bg-image('/category-3.png');
             }
 
             &._c4 {
-                @include bg-image('category-nav/category-4.png');
+                @include bg-image('/category-4.png');
             }
         }
 
@@ -51,22 +51,22 @@
             &-icon {
 
                 &._c1 {
-                    @include bg-image('category-nav/category-1_hover.png');
+                    @include bg-image('/category-1_hover.png');
                 }
 
                 &._c2 {
 
-                    @include bg-image('category-nav/category-2_hover.png');
+                    @include bg-image('/category-2_hover.png');
                 }
 
                 &._c3 {
 
-                    @include bg-image('category-nav/category-3_hover.png');
+                    @include bg-image('/category-3_hover.png');
                 }
 
                 &._c4 {
 
-                    @include bg-image('category-nav/category-4_hover.png');
+                    @include bg-image('/category-4_hover.png');
                 }
             }
         }
@@ -133,7 +133,7 @@
                     top: 0;
                     width: 100%;
                     height: 100%;
-                    @include bg-image('category-nav/category-item-bg.jpg');
+                    @include bg-image('/category-item-bg.jpg');
                     z-index: -1;
                     transform: scale(1);
                     transition: $transition-time transform;

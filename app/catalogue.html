@@ -1,12 +1,13 @@
 //= templates/header.html
 <div class="content">
     <div class="container">
+
         <nav class="nav">
             <div class="nav__container">
                 <a class="nav__link" href="/">Главная</a>
                 <a class="nav__link" href="#">О компании</a>
                 <a class="nav__link _active" href="/catalogue.html">Каталог</a>
-                <a class="nav__link" href="#">“Собери сам”</a>
+                <a class="nav__link" href="/manual.html">“Собери сам”</a>
             </div>
         </nav>
 
@@ -18,9 +19,13 @@
             <div class="catalogue__container">
                 <ul class="catalogue__menu">
                     <li class="catalogue__menu-item js-catalogue-menu-item _active _open">
-                        <a href="#" class="catalogue__menu-item-button">
+                        <a class="catalogue__menu-item-button">
                             <span class="catalogue__menu-item-text">Мебель</span>
-                            <i class="catalogue__menu-item-toggler js-catalogue-menu-toggler"></i>
+                            <i class="catalogue__menu-item-toggler _open js-catalogue-menu-toggler">
+                                <svg class="catalogue__menu-item-toggler-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="540.2 90 336.9 612" >
+                                    <polygon points="572.2,90 540.2,121.8 813.5,396 540.2,670.2 572.2,702 877.2,396 "/>
+                                </svg>
+                            </i>
                         </a>
                         <ul class="catalogue__submenu js-catalogue-submenu">
                             <li class="catalogue__submenu-item">
@@ -43,23 +48,33 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="catalogue__menu-item">
-                        <a href="#" class="catalogue__menu-item-button">
+                    <li class="catalogue__menu-item js-catalogue-menu-item">
+                        <a class="catalogue__menu-item-button">
                             <span class="catalogue__menu-item-text">
                                 Раздвижные системы
                             </span>
+                            <i class="catalogue__menu-item-toggler js-catalogue-menu-toggler">
+                                <svg class="catalogue__menu-item-toggler-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="540.2 90 336.9 612" >
+                                    <polygon points="572.2,90 540.2,121.8 813.5,396 540.2,670.2 572.2,702 877.2,396 "/>
+                                </svg>
+                            </i>
                         </a>
                     </li>
-                    <li class="catalogue__menu-item">
-                        <a href="#" class="catalogue__menu-item-button">
+                    <li class="catalogue__menu-item js-catalogue-menu-item">
+                        <a class="catalogue__menu-item-button">
                             <span class="catalogue__menu-item-text">
                                 Стеллажи
                             </span>
+                            <i class="catalogue__menu-item-toggler js-catalogue-menu-toggler">
+                                <svg class="catalogue__menu-item-toggler-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="540.2 90 336.9 612" >
+                                    <polygon points="572.2,90 540.2,121.8 813.5,396 540.2,670.2 572.2,702 877.2,396 "/>
+                                </svg>
+                            </i>
                         </a>
                     </li>
 
                     <li class="catalogue__menu-item _extra">
-                        <a href="#" class="catalogue__menu-item-button">
+                        <a href="/manual.html" class="catalogue__menu-item-button">
                             <span class="catalogue__menu-item-text">
                                 <span class="catalogue__menu-item-new">NEW!</span>
                                 Собери сам!

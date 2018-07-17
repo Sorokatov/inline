@@ -1,5 +1,6 @@
 .nav {
     padding-top: 17px;
+    padding-bottom: 17px;
 
     &__container {
         @include row();

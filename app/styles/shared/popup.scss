@@ -1,17 +1,22 @@
 .popup {
     width: 465px;
     margin: 0 auto;
-    padding: 20px 30px 80px 30px;
+    padding: 20px 30px 85px 30px;
     border-radius: $border-radius;
     background-color: $white;
+    @include bg-image('popup-bg.png');
+    background-position: bottom -1px center;
+    background-repeat: no-repeat;
 
     &._card {
         width: 950px;
-        padding: 25px 40px 35px 40px;
+        padding: 25px 40px 85px 40px;
+        @include bg-image('form-bg.png');
+        background-size: contain;
     }
 
     &__head {
-        @include row(space-between);
+        @include row(space-between, center);
         margin-bottom: 20px;
     }
 
@@ -22,6 +27,16 @@
         &-img {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    &__close {
+        position: static;
+        width: 12px;
+        height: 12px;
+
+        &.mfp-close {
+            @include bg-image('close.png');
         }
     }
 
@@ -98,11 +113,13 @@
                 margin-bottom: 6px;
                 @include roboto-bold;
                 font-size: 21px;
+                color: $secondary-text;
             }
 
             &-model {
                 font-size: 20px;
                 margin-bottom: 25px;
+                color: $subtitle-text;
             }
 
             &-title,
@@ -114,6 +131,7 @@
                 margin-bottom: 27px;
                 font-size: 15px;
                 line-height: 22px;
+                color: $gray-7f;
             }
         }
 
@@ -133,7 +151,7 @@
                     left: 0;
                     width: 13px;
                     height: 13px;
-                    @include bg-image("active-menu.png");
+                    @include bg-image("circle.png");
                     background-size: cover;
                 }
 
@@ -144,6 +162,7 @@
 
             &-title {
                 font-weight: 700;
+                color: $secondary-text;
 
                 &._colors {
                     min-width: 145px;
@@ -153,6 +172,7 @@
             &-value {
                 display: inline-block;
                 margin-left: 5px;
+                color: $gray-7f;
             }
 
             &-colors {
@@ -216,24 +236,40 @@
     }
 
     &__contact {
+        position: relative;
         @include column(center);
         width: 320px;
         margin: 0 auto;
+        padding-top: 60px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            @include bg-image('support.png');
+            width: 34px;
+            height: 43px;
+            margin-left: -17px;
+            background-size: cover;
+        }
 
         &-title {
             margin-bottom: 10px;
             @include roboto-bold;
             font-size: 25px;
+            color: $secondary-text;
             text-transform: uppercase;
         }
 
         &-text {
+            max-width: 310px;
             margin-bottom: 44px;
             font-size: 15px;
             line-height: 26px;
             letter-spacing: .3px;
-            max-width: 310px;
             text-align: center;
+            color: $gray-7f;
         }
     }
 }

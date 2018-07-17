@@ -74,7 +74,8 @@
         toggleCatalogueSubmenu: function (event) {
             var $self = $(event.currentTarget);
 
-            $self.closest(this.SELECTORS.catalogueMenuItem)
+            $self.toggleClass(this.CLASSES.open)
+                .closest(this.SELECTORS.catalogueMenuItem)
                 .find(this.SELECTORS.catalogueSubMenu)
                 .slideToggle();
         }

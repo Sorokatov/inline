@@ -1,10 +1,10 @@
 html,
 body {
-  margin: 0;
-  background: $white;
-  color: $basic-text;
-  @include roboto-regular;
-  font-size: 18px;
+    margin: 0;
+    background: $white;
+    color: $basic-text;
+    @include roboto-regular;
+    font-size: 18px;
 }
 
 div,
@@ -12,7 +12,7 @@ a,
 button,
 input,
 textarea {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 h1,
@@ -20,18 +20,19 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0;
+    margin: 0;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a {
-  display: inline-block;
-  text-decoration: none;
+    color: $basic-text;
+    display: inline-block;
+    text-decoration: none;
 }
 
 a,
@@ -39,21 +40,25 @@ button,
 input,
 textarea {
 
-  &:focus {
-    outline: none;
-  }
+    &:focus {
+        outline: none;
+    }
 }
 
 button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+p {
+    margin: 0;
 }
 
 .container {
-  width: 1140px;
-  margin: 0 auto;
+    width: 1140px;
+    margin: 0 auto;
 }
 
 .content {

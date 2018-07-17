@@ -1,5 +1,5 @@
 .catalogue {
-    margin-top: 75px;
+    margin-top: 58px;
 
     &__title {
         @include museo-black;
@@ -55,12 +55,24 @@
 
             &-toggler {
                 position: absolute;
-                width: 13px;
-                height: 9px;
+                display: inline-flex;
+                width: 17px;
+                height: 12px;
                 top: 50%;
-                margin-top: -4.5px;
                 right: 20px;
-                background-color: $white;
+                margin-top: -6px;
+                cursor: pointer;
+
+                &-icon {
+                    width: 100%;
+                    height: 100%;
+                    fill: $white;
+                    transform: rotate(90deg);
+                }
+
+                &._open &-icon {
+                    transform: rotate(-90deg);
+                }
             }
 
             &._active & {
@@ -78,15 +90,15 @@
                     &:before {
                         content: '';
                         display: inline-block;
-                        @include bg-image('active-menu.png');
+                        @include bg-image('circle.png');
                         width: 24px;
                         height: 24px;
                         margin-right: 14px;
                     }
                 }
                 
-                &-toggler {
-                    background-color: $blue-02;
+                &-toggler-icon {
+                    fill: $blue-2d;
                 }
             }
 
