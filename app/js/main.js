@@ -14,7 +14,8 @@
             itemPopupShowButton: '.js-show-item-popup',
             itemPopup: '.js-item-popup',
             contactPopupShowButton: '.js-show-contact-popup',
-            contactPopup: '.js-contact-popup'
+            contactPopup: '.js-contact-popup',
+            slider: '.js-slider'
         },
 
         CLASSES: {
@@ -25,7 +26,8 @@
 
         init: function () {
             this.initEventListeners();
-            this.initPopups()
+            this.initSlider();
+            this.initPopups();
         },
 
         initEventListeners: function () {
@@ -78,6 +80,15 @@
                 .closest(this.SELECTORS.catalogueMenuItem)
                 .find(this.SELECTORS.catalogueSubMenu)
                 .slideToggle();
+        },
+
+        initSlider: function (event) {
+            $(this.SELECTORS.slider).owlCarousel({
+                items: 3,
+                center: true,
+                loop: true,
+                dots: true
+            });
         }
     };
 
