@@ -27,6 +27,7 @@
                 padding: 0 20px 0 30px;
                 border-radius: $border-radius;
                 background-color: $blue-2d;
+                cursor: pointer;
             }
 
             & + & {
@@ -61,7 +62,6 @@
                 top: 50%;
                 right: 20px;
                 margin-top: -6px;
-                cursor: pointer;
 
                 &-icon {
                     width: 100%;
@@ -69,10 +69,10 @@
                     fill: $white;
                     transform: rotate(90deg);
                 }
+            }
 
-                &._open &-icon {
-                    transform: rotate(-90deg);
-                }
+            &-button._open &-toggler-icon {
+                transform: rotate(-90deg);
             }
 
             &._active & {

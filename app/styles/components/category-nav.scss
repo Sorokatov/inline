@@ -8,8 +8,13 @@
     }
 
     &__item {
-        @include column(center);
-        padding: 0 50px;
+
+        &,
+        &-wrap {
+            @include column(center);
+        }
+
+        width: 220px;
         cursor: pointer;
 
         &-icon {
@@ -17,22 +22,6 @@
             height: 65px;
             margin-bottom: 10px;
             background-size: cover;
-
-            &._c1 {
-                @include bg-image('/category-1.png');
-            }
-
-            &._c2 {
-                @include bg-image('/category-2.png');
-            }
-
-            &._c3 {
-                @include bg-image('/category-3.png');
-            }
-
-            &._c4 {
-                @include bg-image('/category-4.png');
-            }
         }
 
         &-title {
@@ -41,54 +30,61 @@
             letter-spacing: 0;
         }
 
-        &._active & {
+        @for $i from 1 through 4 {
 
-            &-title {
-                font-weight: 700;
-                letter-spacing: -.337px;
+            &._c#{$i} &-icon {
+                @include bg-image('category-#{$i}.png');
             }
 
-            &-icon {
-
-                &._c1 {
-                    @include bg-image('/category-1_hover.png');
-                }
-
-                &._c2 {
-
-                    @include bg-image('/category-2_hover.png');
-                }
-
-                &._c3 {
-
-                    @include bg-image('/category-3_hover.png');
-                }
-
-                &._c4 {
-
-                    @include bg-image('/category-4_hover.png');
-                }
+            &._c#{$i} &-wrap:hover &-icon {
+                @include bg-image('category-#{$i}_hover.png');
             }
         }
     }
-    
+
+    &__item-wrap:hover & {
+
+        &__menu {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(100%);
+        }
+
+        &__item-title {
+            font-weight: 700;
+            letter-spacing: -.337px;
+        }
+    }
+
+    &__item._c1 &__menu-arrow {
+        background-position-x: 140px;
+    }
+
+    &__item._c2 &__menu-arrow {
+        background-position-x: 310px;
+    }
+
+    &__item._c3 &__menu-arrow {
+        background-position-x: 570px;
+    }
+
+    &__item._c4 &__menu-arrow {
+        background-position-x: 745px;
+    }
+
+
     &__menu {
         position: absolute;
         width: 100%;
         left: 0;
-        bottom: -20px;
+        bottom: -25px;
         border-radius: $border-radius;
-        transform: translateY(100%);
         background-color: $white;
         transition: $transition-time all;
-        opacity: 1;
         z-index: 2;
-
-        &._hidden {
-            pointer-events: none;
-            opacity: 0;
-            transform: translateY(85%);
-        }
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(85%);
 
         &-container {
             position: relative;
@@ -110,11 +106,12 @@
         
         &-arrow {
             position: absolute;
-            width: 66px;
+            width: 100%;
             height: 27px;
             left: 0;
             top: -27px;
             @include bg-image('nav-arrow.png');
+            background-repeat: no-repeat;
         }
 
         &-item {
@@ -137,7 +134,7 @@
                     @include bg-image('/category-item-bg.jpg');
                     z-index: -1;
                     transform: scale(1);
-                    transition: $transition-time transform;
+                    transition: $transition-time all;
                 }
 
                 .button {
@@ -157,7 +154,7 @@
                 &-wrap {
 
                     &:before {
-                        transform: scale(1.05);
+                        transform: scaleX(1.03) scaleY(1.05);
                     }
 
                     .button {

@@ -15,7 +15,10 @@
             itemPopup: '.js-item-popup',
             contactPopupShowButton: '.js-show-contact-popup',
             contactPopup: '.js-contact-popup',
-            slider: '.js-slider'
+            slider: '.js-slider',
+            itemColor: '.js-item-color',
+            itemShowcaseImg: '.js-item-showcase-img',
+            itemThumbImg: '.js-item-thumb-img'
         },
 
         CLASSES: {
@@ -31,8 +34,9 @@
         },
 
         initEventListeners: function () {
-            $(document).on('click', this.SELECTORS.categoryNavItem, this.toggleCategoryNav.bind(this));
             $(document).on('click', this.SELECTORS.catalogueMenuToggler, this.toggleCatalogueSubmenu.bind(this));
+            $(document).on('click', this.SELECTORS.itemColor, this.selectColor.bind(this));
+            $(document).on('click', this.SELECTORS.itemThumbImg, this.changeShowcaseImg.bind(this));
         },
 
         initPopups: function () {
@@ -52,27 +56,6 @@
             })
         },
 
-        toggleCategoryNav: function (event) {
-            var $self = $(event.currentTarget),
-                $navMenu = $(this.SELECTORS.categoryNavMenu);
-
-            if ($self.hasClass(this.CLASSES.active)) {
-                $self.removeClass(this.CLASSES.active);
-                $navMenu.addClass(this.CLASSES.hidden)
-            } else {
-                $(this.SELECTORS.categoryNavItem + '.' + this.CLASSES.active)
-                    .removeClass(this.CLASSES.active);
-                $self.addClass(this.CLASSES.active);
-                $navMenu.removeClass(this.CLASSES.hidden);
-                this.moveCategoryNavArrow($self);
-            }
-        },
-
-        moveCategoryNavArrow: function (elementForAlign) {
-            var offsetFromElem = 30; // for visual goodness
-            $(this.SELECTORS.categoryNavArrow).css('left', elementForAlign.get(0).offsetLeft - offsetFromElem);
-        },
-
         toggleCatalogueSubmenu: function (event) {
             var $self = $(event.currentTarget);
 
@@ -82,12 +65,30 @@
                 .slideToggle();
         },
 
+        selectColor: function (event) {
+            var $self = $(event.currentTarget);
+
+            $(this.SELECTORS.itemColor).removeClass(this.CLASSES.active);
+            $self.addClass(this.CLASSES.active);
+
+        },
+
+        changeShowcaseImg: function (event) {
+            var $self = $(event.currentTarget),
+                thumbImgPath = $self.attr('src');
+
+            $(this.SELECTORS.itemShowcaseImg).attr('src', thumbImgPath);
+        },
+
         initSlider: function (event) {
             $(this.SELECTORS.slider).owlCarousel({
                 items: 3,
                 center: true,
                 loop: true,
-                dots: true
+                dots: true,
+                smartSpeed: 800,
+                autoplay: true,
+                autoplayTimeout: 3000
             });
         }
     };

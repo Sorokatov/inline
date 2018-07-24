@@ -60,8 +60,10 @@
         }
 
         &-image {
+            @include row(center, center);
             height: 100%;
             width: 110px;
+            padding: 5px;
             border: 2px solid $gray-f5;
             overflow: hidden;
             cursor: pointer;
