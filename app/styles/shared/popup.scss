@@ -7,6 +7,16 @@
     @include bg-image('popup-bg.png');
     background-position: bottom -1px center;
     background-repeat: no-repeat;
+    transition: $transition-time opacity;
+
+    .mfp-ready & {
+        opacity: 1;
+    }
+
+    .mfp-removing &,
+    & {
+        opacity: 0;
+    }
 
     &._card {
         width: 950px;

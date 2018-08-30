@@ -17,7 +17,7 @@
     transition: $transition-time all;
 
     &:hover {
-        box-shadow: 0 0 11.18px 3.82px rgba(0,0,0,0.11);
+        box-shadow: 0 0 0 1px $secondary-text;
     }
 
     &._transparent {
@@ -28,6 +28,7 @@
         &:hover {
             background-color: $link-text;
             color: $white;
+            box-shadow: inherit;
         }
     }
 
@@ -39,6 +40,7 @@
         &:hover {
             background-color: transparent;
             border-color: $secondary-text;
+            box-shadow: none;
             color: $secondary-text;
         }
     }
@@ -52,6 +54,7 @@
         &:hover {
             background-color: $blue-2d;
             color: $white;
+            box-shadow: inherit;
         }
     }
 }

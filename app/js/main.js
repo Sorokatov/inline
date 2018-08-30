@@ -5,6 +5,8 @@
     var app = {
 
         SELECTORS: {
+            header: '.js-header',
+            headerPlaceholder: '.js-header-placeholder',
             categoryNavItem: '.js-category-nav-item',
             categoryNavMenu: '.js-category-nav-menu',
             categoryNavArrow: '.js-category-nav-arrow',
@@ -24,19 +26,22 @@
         CLASSES: {
             active: '_active',
             hidden: '_hidden',
-            open: '_open'
+            open: '_open',
+            flowing: '_flowing'
         },
 
         init: function () {
             this.initEventListeners();
             this.initSlider();
             this.initPopups();
+            this.initHeaderPlaceholder();
         },
 
         initEventListeners: function () {
             $(document).on('click', this.SELECTORS.catalogueMenuToggler, this.toggleCatalogueSubmenu.bind(this));
             $(document).on('click', this.SELECTORS.itemColor, this.selectColor.bind(this));
             $(document).on('click', this.SELECTORS.itemThumbImg, this.changeShowcaseImg.bind(this));
+            $(document).on('scroll', this.setHeaderState.bind(this));
         },
 
         initPopups: function () {
@@ -45,14 +50,16 @@
                 items: {
                     src: this.SELECTORS.itemPopup,
                     type: 'inline'
-                }
+                },
+                    removalDelay: 300
             });
 
             $(this.SELECTORS.contactPopupShowButton).magnificPopup({
                 items: {
                     src: this.SELECTORS.contactPopup,
                     type: 'inline'
-                }
+                },
+                removalDelay: 300
             })
         },
 
@@ -90,6 +97,19 @@
                 autoplay: true,
                 autoplayTimeout: 3000
             });
+        },
+
+        initHeaderPlaceholder: function () {
+            $(this.SELECTORS.headerPlaceholder).css('height', $(this.SELECTORS.header).innerHeight());
+        },
+
+        setHeaderState: function () {
+
+            if ($(document).scrollTop() > $(this.SELECTORS.header).innerHeight()) {
+                $(this.SELECTORS.header).addClass(this.CLASSES.flowing);
+            } else {
+                $(this.SELECTORS.header).removeClass(this.CLASSES.flowing);
+            }
         }
     };
 
