@@ -192,6 +192,10 @@
         background-repeat: no-repeat;
         background-size: contain;
 
+        &._about {
+            margin-bottom: 0;
+        }
+
         &-head {
             @include row(space-between, flex-start);
             margin-bottom: 70px;

@@ -1,0 +1,80 @@
+.about {
+    margin-top: 85px;
+
+    &__head {
+        position: relative;
+        @include row();
+        height: 21vw;
+        margin-bottom: 100px;
+        color: $secondary-text;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 63px;
+            background-size: cover;
+        }
+
+        &:before {
+            top: -63px;
+            @include bg-image("about-top.png");
+        }
+
+        &:after {
+            bottom: -63px;
+            @include bg-image("about-bot.png");
+        }
+
+        &-text,
+        &-img {
+            width: 50%;
+        }
+
+        &-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-text {
+            padding-top: 3vw;
+            padding-right: 75px;
+            text-align: right;
+        }
+
+        &-title {
+            margin-bottom: .2vw;
+            font-size: 71px;
+            line-height: 1;
+            @include roboto-bold;
+        }
+
+        &-subtitle {
+            margin-bottom: 2.2vw;
+            @include roboto-light;
+            font-size: 25px;
+        }
+
+        &-desc {
+            @include roboto-thin;
+            color: $gray-7f;
+            line-height: 1.6vw;
+
+            &-sub {
+                margin-top: 1.6vw;
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 95px;
+        @include roboto-light;
+        line-height: 32px;
+
+        p + p {
+            margin-top: 36px;
+        }
+    }
+}
